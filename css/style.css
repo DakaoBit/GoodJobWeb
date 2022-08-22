@@ -1,0 +1,144 @@
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+
+:root {
+    --basic-color: #FCFAF2;
+    --premium-color:#A8D8B9;
+    --sumi-color: #1C1C1C;
+    --atake-color:#72c08d;
+    --rurikon-color:#005CAF;
+}
+
+*{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.j_border {
+    border: 1px solid;
+    border-block: 1px solid #000 !important;
+    border-block-style: dotted;
+    writing-mode: horizontal-tb;
+}
+
+.bg_basic{
+    background-color: var(--basic-color);
+}
+.bg_premium {
+    background-color: var(--premium-color);
+}
+
+.btn_basic,.btn_premium{
+    cursor: pointer;
+} 
+
+.btn_basic:hover{
+    background-color: var(--sumi-color);
+}
+.btn_basic:hover > a {
+    color: var(--basic-color);
+}
+
+
+.btn_premium:hover {
+    background-color: var(--atake-color);
+}
+
+.btn_premium:hover>a {
+    color: var(--basic-color);
+}
+
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.j_search_wrap{
+    position: relative;
+        display: inline-block;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #000;
+    background-color: #fff;
+    height: 50px;
+}
+
+.j_dropdown_btn{
+    width:100%;
+    height: 100%;
+        font-size: 20px;
+        line-height: 20px;
+        border: none;
+        cursor: pointer;
+    background-color: #fff;
+}
+
+.j_dropdown_btn > i{
+    float: right;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.j_dropdown_content {
+    display: none;
+    position: relative;
+    top: 2px;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.j_dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.j_dropdown_content a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .j_dropdown_content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+.form-select, .form-control{
+border: none;
+width: 100%;
+}
+
+.j_item{
+    border-bottom: 1px solid;
+}
+
+a.j_jobTitle{
+    color:#005CAF;
+}
+
+a.j_jobTitle:hover{
+    color: #007ae6
+}
+ 
+.j_wrap{
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.j_btnTag{
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.j_btnTag:hover{
+    background-color: #000;
+    color: #fff;
+}

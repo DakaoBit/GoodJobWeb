@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="stcky-header" class="row text-center">
+            <div class="j_border col p-3 bg_basic btn_basic">
+                <a href="/Index.html" class="h2">
+                    Find Job
+                </a>
+            </div>
+            <div class="j_border col p-3 bg_premium btn_premium">
+                <a href="/PostJob.html" class="h2">
+                    Post Job
+                </a>
+            </div>
+        </div>
+        <div style="height: 50px;" class="j_border row">
+            <div class="col">
+                marquee
+                <a
+                    href="https://isotropic.co/how-to-marquee-elements/">https://isotropic.co/how-to-marquee-elements/</a>
+            </div>
+        </div>
+        <!-- Search Option -->
+        <div class="row justify-content-center">
+            <div class="j_search_wrap col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
+                <!-- 自製 暫不使用 -->
+                <!-- <label id="">Full-Time</label>
+                <button id="btnDropType" class="j_dropdown_btn">
+                    Type <i class="bi bi-arrow-down-circle-fill"></i>
+                </button>
+                <div id="dropType" class="j_dropdown_content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Type</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
+            </div>
+            <div class="j_search_wrap col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Skill</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="j_search_wrap col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Level</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="j_search_wrap col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
+                <input class="form-control form-control-lg" type="text" placeholder="Location"
+                    aria-label=".form-control-lg example">
+            </div>
+            <!-- <div class="j_query_wrap col-lg-2 col-md-3 col-sm-12 col-xs-12 col-12">
+                
+            </div>
+            <div class="j_query_wrap col-lg-2 col-md-3 col-sm-12 col-xs-12 col-12">
+                
+            </div> -->
+        </div>
+
+        <!-- content -->
+        <div class="row j_item">
+            <div class="j_job_wrap px-5 py-4">
+                <div class="j_job">
+                    <div class="row">
+                        <div class="col-10 col-md-10 col-sm-10">
+                            <h1>Company</h1>
+                        </div>
+                        <div class="col-2 col-md-2 col-sm-2">
+                            <h1>65K</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h1><a class="j_jobTitle" href="">JobTitle</a> </h1>
+                    </div>
+                </div>
+                <div class="j_wrap">
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                    <button class="j_btnTag rounded-pill px-4 py-2 mx-1 my-1">#New York</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+    <script src="/js/utils.js"></script>
+</body>
+
+</html>
