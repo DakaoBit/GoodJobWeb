@@ -6,6 +6,7 @@
     --sumi-color: #1C1C1C;
     --atake-color:#72c08d;
     --rurikon-color:#005CAF;
+    --duration: 60s;
 }
 
 *{
@@ -54,8 +55,51 @@ a {
 .sticky-header {
     position: fixed;
     top: 0;
-    width: 100%
+    width: 100%;
+    z-index:1;
 }
+
+/*
+* marquee
+*/
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem;
+}
+
+.marquee_group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    min-width: 100%;
+    animation: scroll var(--duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee_group {
+        animation-play-state: paused;
+    }
+}
+
+.marquee_reverse .marquee_group {
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - 2rem));
+    }
+}
+
 
 .j_search_wrap{
     position: relative;
