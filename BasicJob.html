@@ -124,7 +124,8 @@
         <div class="j_border row">
             <div class="col p-1">
                 <label class="form-label h2 p-xl-2">Location</label>
-                <input id="jobLocation" type="text" class="form-control form-control-lg" placeholder="e.g. Job Location">
+                <input id="jobLocation" type="text" class="form-control form-control-lg"
+                    placeholder="e.g. Job Location">
             </div>
         </div>
         <!-- Remote -->
@@ -148,12 +149,20 @@
         </div>
         <div class="j_border row">
             <div class="d-grid gap-2 p-1">
-                <button class="btn btn-dark" type="button">Post</button>
+                <button id="btnSubmit" onclick="Submit()" class="btn btn-dark" type="button">Post</button>
             </div>
         </div>
     </div>
- 
-    <script type="module" src="/js/utils.js"></script>
+
+    <!--SweetAlert2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/share/sweetalert2.js"></script>
+    <!--Lodash-->
+    <script src="/lib/lodash/lodash.min.js"></script>
+    <script src="/lib/validator/validator.min.js"></script>
+    <script src="/js/share/utils.js"></script>
+    <script type="module" src="/js/site.js"></script>
+    <script src="/js/page/basicjob.js"></script>
 </body>
 
 </html>

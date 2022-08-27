@@ -1,5 +1,5 @@
 import { print } from './test.js'
-import { httpPost, httpGet } from './http.js'
+import { httpPost, httpGet } from './share/http.js'
 
 document.addEventListener("DOMContentLoaded", function () {
   // When the user scrolls the page, execute fixedHeader
