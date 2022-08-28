@@ -1,15 +1,35 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+ 
+  new TomSelect("#jobType", {
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc",
+    },
+  });
+
+  new TomSelect("#jobSkill", {
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc",
+    },
+  });
+
+  new TomSelect("#jobLevel", {
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc",
+    },
+  });
+});
+
 function ValidateInput(paremeters) {
-  var {
-    mail,
-    companyName,
-    jobTitle,
-    jobType,
-    jobSkill,
-    jobLevel,
-    jobLocation,
-    isRemote,
-    link,
-  } = paremeters;
+  var { mail, companyName, jobTitle, jobLocation, isRemote, link } = paremeters;
+  console.log(paremeters);
+  //全部顯示的方式
   //   let aletUl = document.createElement("ul");
 
   //   if (_.isEmpty(mail)) {
@@ -45,14 +65,20 @@ function ValidateInput(paremeters) {
     swalTip("Warning", "Job Title is Required");
     return;
   }
+
+  let jobType = GetSelectedOptionValue("jobType");
   if (_.isEmpty(jobType)) {
     swalTip("Warning", "Job Type is Required");
     return;
   }
+
+  let jobSkill = GetSelectedOptionValue("jobSkill");
   if (_.isEmpty(jobSkill)) {
     swalTip("Warning", "Job Skill is Required");
     return;
   }
+
+  let jobLevel = GetSelectedOptionValue("jobLevel");
   if (_.isEmpty(jobLevel)) {
     swalTip("Warning", "Job Level is Required");
     return;
@@ -65,6 +91,10 @@ function ValidateInput(paremeters) {
     swalTip("Warning", "Link is Required");
     return;
   }
+  if (!ValidateURL(link)) {
+    swalTip("Warning", "Link is not an url");
+    return;
+  }
 
   return true;
 }
@@ -74,4 +104,11 @@ async function Submit() {
 
   if (ValidateInput(paremeters) == true) {
   }
+}
+
+async function SelectRemote(chk){
+  if (chk.checked)
+    chk.value = 1;
+  else
+    chk.value = 0;
 }
