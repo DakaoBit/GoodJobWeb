@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/lib/tom-select/tom-select.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -193,55 +194,55 @@
             //   }
 
             if (_.isEmpty(mail)) {
-                swalTip("Warning", "Email is Required");
+                swalPremium("Warning", "Email is Required");
                 return;
             }
             if (!ValidateEmail(mail)) {
-                swalTip("Warning", "Email Format is Required");
+                swalPremium("Warning", "Email Format Error");
                 return;
             }
             if (_.isEmpty(companyName)) {
-                swalTip("Warning", "Company Name is Required");
+                swalPremium("Warning", "Company Name is Required");
                 return;
             }
             if (_.isEmpty(title)) {
-                swalTip("Warning", "Job Title is Required");
+                swalPremium("Warning", "Job Title is Required");
                 return;
             }
             let type = GetSelectedOptionValue("type");
             if (_.isEmpty(type)) {
-                swalTip("Warning", "Job Type is Required");
+                swalPremium("Warning", "Job Type is Required");
                 return;
             }
             if (_.isEmpty(skill)) {
-                swalTip("Warning", "Job Skill is Required");
+                swalPremium("Warning", "Job Skill is Required");
                 return;
             }
             let level = GetSelectedOptionValue("level");
             if (_.isEmpty(level)) {
-                swalTip("Warning", "Job Level is Required");
+                swalPremium("Warning", "Job Level is Required");
                 return;
             }
             if (_.isEmpty(location)) {
-                swalTip("Warning", "Job Location is Required");
+                swalPremium("Warning", "Job Location is Required");
                 return;
             }
 
             let description = document.getElementById("description").value;
             if (_.isEmpty(description)) {
-                swalTip("Warning", "Job Description is Required");
+                swalPremium("Warning", "Job Description is Required");
                 return;
             }
             if (!ValidateLength(description, 10, 200)){
-                swalTip("Warning", "Job Description need 10 ~ 200 characters");
+                swalPremium("Warning", "Job Description need 10 ~ 200 characters");
                 return;
             }
             if (_.isEmpty(link)) {
-                swalTip("Warning", "Link is Required");
+                swalPremium("Warning", "Link is Required");
                 return;
             }
             if (!ValidateURL(link)) {
-                swalTip("Warning", "Link is not an url");
+                swalPremium("Warning", "Link is not an url");
                 return;
             }
 

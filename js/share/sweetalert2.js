@@ -12,7 +12,22 @@
           confirmButtonColor: "#1c1c1c",
         });
     }
-  
+}
+
+function swalPremium(title, text = null) {
+  if (text == null) {
+      Swal.fire({
+          title,
+          confirmButtonColor: '#A8D8B9',
+      })
+  }
+  else {
+      Swal.fire({
+        title,
+        text,
+        confirmButtonColor: "#A8D8B9",
+      });
+  }
 }
 
 function swalHtml(options) {
