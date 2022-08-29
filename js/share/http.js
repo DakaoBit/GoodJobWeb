@@ -1,4 +1,4 @@
-﻿export async function httpPost(url, data) {
+﻿async function httpPost(url, data) {
     return new Promise((resolve, reject) => {
         const options = {
             body: JSON.stringify(data),
@@ -15,7 +15,7 @@
     });
 }
 
-export async function httpGet(url, data) {
+async function httpGet(url, data) {
     return new Promise((resolve, reject) => {
         let urlContent = new URL(url);
         if (data != null) {

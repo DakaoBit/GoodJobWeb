@@ -144,6 +144,7 @@
     <script src="/lib/tom-select/tom-select.complete.min.js"></script>
     <script src="/lib/validator/validator.min.js"></script>
     <script src="/js/share/utils.js"></script>
+    <script src="/js/share/http.js"></script>
     <script type="module" src="/js/site.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -167,7 +168,6 @@
 
         function ValidateInput(paremeters) {
             var { mail, companyName, title, skill, location, isRemote, link } = paremeters;
-            console.log(paremeters);
             //全部顯示的方式
             //   let aletUl = document.createElement("ul");
 
@@ -248,7 +248,22 @@
             var paremeters = GetAllInputValue();
 
             if (ValidateInput(paremeters) == true) {
-
+                // let url = location.protocol + '//' + location.host;
+                // var apiUrl = url + "/jobpost/getCompanyPost";
+                var { mail, companyName, title, skill, location, isRemote, link } = paremeters;
+                var obj = {
+                    mail,
+                    companyName,
+                    title,
+                    type: GetSelectedOptionValue("type"),
+                    skill,
+                    level: GetSelectedOptionValue("level"),
+                    location,
+                    isRemote,
+                    description: document.getElementById("description").value,
+                    link
+                };
+                console.log(obj);
             }
         }
 
