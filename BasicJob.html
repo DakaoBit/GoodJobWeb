@@ -120,7 +120,6 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
-
             </div>
         </div>
         <!-- Location -->
@@ -263,12 +262,17 @@
             }
         }
 
+        /**
+         * 是否為遠端 0:否 1:是
+         * @param {*} chk 
+         */
         async function SelectRemote(chk) {
             if (chk.checked)
                 chk.value = 1;
             else
                 chk.value = 0;
         }
+
     </script>
 </body>
 
