@@ -52,7 +52,6 @@
         <!-- form -->
         <!-- Email -->
         <div class="j_border row">
-
             <div class="col p-1">
                 <label class="form-label h2 p-xl-2">Email address</label>
                 <input id="mail" type="email" class="form-control form-control-lg" placeholder="your@email.com">
@@ -66,19 +65,19 @@
                     placeholder="e.g. Your Company">
             </div>
         </div>
-        <!-- JobTitle -->
+        <!-- Title -->
         <div class="j_border row">
             <div class="col p-1">
-                <label class="form-label h2 p-xl-2">Job Title</label>
-                <input id="jobTitle" type="text" class="form-control form-control-lg" placeholder="e.g. Directer">
+                <label class="form-label h2 p-xl-2">Title</label>
+                <input id="title" type="text" class="form-control form-control-lg" placeholder="e.g. Directer">
             </div>
         </div>
-        <!-- JobType -->
+        <!-- Type -->
         <div class="j_border row">
             <div class="col p-1">
-                <label class="form-label h2 p-xl-2">Job Type</label>
+                <label class="form-label h2 p-xl-2">Type</label>
                 <div class="p-xl-2 col-3">
-                    <select id="jobType" multiple placeholder="Select Job Type">
+                    <select id="type" multiple placeholder="Select Job Type">
                         <option value="Freelance">Freelance</option>
                         <option value="Full-time">Full-time</option>
                         <option value="Internship">Internship</option>
@@ -103,25 +102,19 @@
                 </div>
             </div>
         </div>
-        <!-- JobSkill -->
+        <!-- Skill -->
         <div class="j_border row">
             <div class="col p-1">
-                <label class="form-label h2 p-xl-2">Job Skill</label>
-                <div class="p-xl-2 col-3">
-                    <select id="jobSkill" multiple placeholder="Select Job Skill">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+                <label class="form-label h2 p-xl-2">Skill</label>
+                <input id="skill" type="text" class="form-control form-control-lg" placeholder="e.g. Accounting">
             </div>
         </div>
-        <!-- JobLevel -->
+        <!-- Level -->
         <div class="j_border row">
             <div class="col p-1">
-                <label class="form-label h2 p-xl-2">Job Level</label>
+                <label class="form-label h2 p-xl-2">Level</label>
                 <div class="p-xl-2 col-3">
-                    <select id="jobLevel" multiple placeholder="Select Job Level">
+                    <select id="level" multiple placeholder="Select Job Level">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -134,8 +127,7 @@
         <div class="j_border row">
             <div class="col p-1">
                 <label class="form-label h2 p-xl-2">Location</label>
-                <input id="jobLocation" type="text" class="form-control form-control-lg"
-                    placeholder="e.g. Job Location">
+                <input id="location" type="text" class="form-control form-control-lg" placeholder="e.g. Job Location">
             </div>
         </div>
         <!-- Remote -->
@@ -144,7 +136,8 @@
                 <label class="form-label h2 p-xl-2">Remote friendly</label>
                 <div class="p-xl-2 p-lg-2 p-md-2 p-sm-2">
                     <div class="form-check form-switch form-switch-lg">
-                        <input id="isRemote" onclick="SelectRemote(this)" class="form-check-input" type="checkbox" value="0">
+                        <input id="isRemote" onclick="SelectRemote(this)" class="form-check-input" type="checkbox"
+                            value="0">
                     </div>
                 </div>
             </div>
@@ -152,7 +145,7 @@
         <!-- Link -->
         <div class="j_border row">
             <div class="col p-1">
-                <label class="form-label h2 p-xl-2">Job Link</label>
+                <label class="form-label h2 p-xl-2">Link</label>
                 <input id="link" type="text" class="form-control form-control-lg"
                     placeholder="e.g. https://company.com/job">
             </div>
@@ -173,7 +166,110 @@
     <script src="/lib/validator/validator.min.js"></script>
     <script src="/js/share/utils.js"></script>
     <script type="module" src="/js/site.js"></script>
-    <script src="/js/page/basicjob.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            new TomSelect("#type", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc",
+                },
+            });
+
+            new TomSelect("#level", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc",
+                },
+            });
+        });
+
+        function ValidateInput(paremeters) {
+            var { mail, companyName, title, skill, location, isRemote, link } = paremeters;
+            console.log(paremeters);
+            //全部顯示的方式
+            //   let aletUl = document.createElement("ul");
+
+            //   if (_.isEmpty(mail)) {
+            //     let li = document.createElement("li");
+            //     let content = document.createTextNode("Email is Required");
+            //     li.appendChild(content)
+            //     aletUl.appendChild(li);
+            //   }
+
+            //   if (!_.isEmpty(aletUl.innerHTML))
+            //   {
+            //     var obj = {
+            //       icon: "warning",
+            //       title: "Warning",
+            //       html: aletUl,
+            //     };
+            //     swalHtml(obj);
+            //   }
+
+            if (_.isEmpty(mail)) {
+                swalTip("Warning", "Email is Required");
+                return;
+            }
+            if (!ValidateEmail(mail)) {
+                swalTip("Warning", "Email Format is Required");
+                return;
+            }
+            if (_.isEmpty(companyName)) {
+                swalTip("Warning", "Company Name is Required");
+                return;
+            }
+            if (_.isEmpty(title)) {
+                swalTip("Warning", "Job Title is Required");
+                return;
+            }
+            let type = GetSelectedOptionValue("type");
+            if (_.isEmpty(type)) {
+                swalTip("Warning", "Job Type is Required");
+                return;
+            }
+            if (_.isEmpty(skill)) {
+                swalTip("Warning", "Job Skill is Required");
+                return;
+            }
+            let level = GetSelectedOptionValue("level");
+            if (_.isEmpty(level)) {
+                swalTip("Warning", "Job Level is Required");
+                return;
+            }
+            if (_.isEmpty(location)) {
+                swalTip("Warning", "Job Location is Required");
+                return;
+            }
+            if (_.isEmpty(link)) {
+                swalTip("Warning", "Link is Required");
+                return;
+            }
+            if (!ValidateURL(link)) {
+                swalTip("Warning", "Link is not an url");
+                return;
+            }
+
+            return true;
+        }
+
+        async function Submit() {
+            var paremeters = GetAllInputValue();
+
+            if (ValidateInput(paremeters) == true) {
+            }
+        }
+
+        async function SelectRemote(chk) {
+            if (chk.checked)
+                chk.value = 1;
+            else
+                chk.value = 0;
+        }
+    </script>
 </body>
 
 </html>
