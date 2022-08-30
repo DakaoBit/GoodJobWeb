@@ -2,7 +2,7 @@ import { print } from './test.js'
 
 document.addEventListener("DOMContentLoaded", function () {
   // When the user scrolls the page, execute fixedHeader
-  document.getElementById("stcky-header").innerHTML = headerTemplate();
+  document.getElementById("sticky-header").innerHTML = headerTemplate();
   window.onscroll = function () {
     fixedHeader();
   };
@@ -33,7 +33,7 @@ export function headerTemplate() {
  */
 export function fixedHeader() {
   // Get the header
-  var header = document.getElementById("stcky-header");
+  var header = document.getElementById("sticky-header");
 
   // Get the offset position of the navbar
   var sticky = header.offsetTop;
